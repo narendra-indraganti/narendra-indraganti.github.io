@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narendra Indraganti - Portfolio</title>
+    <style>
+        /* General Reset and Typography */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f3f2ef; /* LinkedIn light gray background */
+            color: #000000e6;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Card Style */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px rgba(140, 140, 140, 0.2);
+            padding: 24px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Typography Styles */
+        h1 {
+            font-size: 24px;
+            margin: 0 0 4px 0;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 0 0 16px 0;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin: 0 0 4px 0;
+            font-weight: 600;
+        }
+        
+        /* Subsections inside cards */
+        h4 {
+            font-size: 14px;
+            margin: 16px 0 8px 0;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 8px 0;
+        }
+
+        .date-location {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 0 0 8px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        /* Header Specifics */
+        .profile-header {
+            text-align: center; /* Center everything in the header */
+        }
+
+        .profile-pic {
+            width: 152px;
+            height: 152px;
+            border-radius: 50%; /* Makes it a circle */
+            object-fit: cover; /* Prevents image stretching */
+            border: 4px solid white; /* LinkedIn style border */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
+            margin-bottom: 12px;
+            background-color: #eee; /* Fallback color if image missing */
+        }
+
+        .profile-header h1 {
+            font-size: 28px;
+        }
+        .profile-header .headline {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .profile-header .contact-info {
+            font-size: 14px;
+            color: #0a66c2; /* LinkedIn Blue */
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Featured Section Grid */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        
+        .featured-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* YouTube Responsive Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background-color: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .featured-content {
+            padding: 12px;
+            flex-grow: 1;
+        }
+
+        .featured-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .featured-desc {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Skills Chips */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-chip {
+            border: 1px solid #666;
+            border-radius: 16px;
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .section-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 16px 0;
+        }
+
+        /* Utility for Education Row */
+        .flex-row-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="card profile-header">
+            <img src="profile.jpg" alt="Narendra Indraganti" class="profile-pic">
+            
+            <h1>Narendra Indraganti</h1> 
+            <div class="headline">Aspiring Mechatronics Engineer | Robotics Innovator | CAD Designer</div>
+            <div class="date-location">Fremont, CA</div>
+            <div class="contact-info">
+                narendra.indraganti@gmail.com &bull; +1 (510) 203-7339
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>About</h2>
+            <p>
+                Motivated high school student with a strong foundation in engineering design, robotics, and mechanical fabrication. 
+                Experienced in CAD software (OnShape, Fusion 360, SolidWorks) and hands-on prototyping through competitive robotics and aviation projects. 
+                Passionate about solving complex engineering challenges and innovative design, with a track record of leadership in team environments.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-chip">OnShape</div>
+                <div class="skill-chip">Autodesk Fusion 360</div>
+                <div class="skill-chip">SolidWorks</div>
+                <div class="skill-chip">Prototyping</div>
+                <div class="skill-chip">Fabrication</div>
+                <div class="skill-chip">PC Hardware Assembly</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Honors & Awards</h2>
+            <ul>
+                <li><strong>FTC Robotics Awards:</strong> Innovate, Design (twice), Inspire, Connect</li>
+                <li><strong>Soccer:</strong> Silicon Valley Cup Champion, State Cup Silver Medalist</li>
+                <li><strong>Wrestling:</strong> Placed 5th in NorCal Tournaments (Varsity)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Featured</h2>
+            <div class="featured-grid">
+                
+                <div class="featured-item">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/mZXCKYIyuUs?si=HktkJ7Scztw0xV-R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+                    </div>
+                    <div class="featured-content">
+                        <div class="featured-title">Award-Winning Robot Design</div>
+                        <div class="featured-desc">NorCal Regionals Innovate & Design Award Winner.</div>
+                    </div>
+                </div>
+
+                <div class="featured-item">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/6TfFG4ru_Mo?si=HktkJ7Scztw0xV-R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="featured-content">
+                        <div class="featured-title">Electric Go-Kart Build</div>
+                        <div class="featured-desc">Designed and built a functional electric go-kart from the ground up.</div>
+                    </div>
+                </div>
+
+                <div class="featured-item">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://youtube.com/shorts/embed/6TfFG4ru_Moo" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="featured-content">
+                        <div class="featured-title">AR Glasses Prototype</div>
+                        <div class="featured-desc">Constructed personal AR glasses integrating optics and electronics.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Education</h2>
+            
+            <div>
+                <div class="flex-row-between">
+                    <h3>Mission San Jose High School</h3>
+                    <div class="date-location" style="margin-bottom: 0;">2025 - 2028</div>
+                </div>
+                <div class="date-location">Fremont, CA</div>
+            </div>
+            
+            <div class="section-divider"></div>
+
+            <div>
+                <div class="flex-row-between">
+                    <h3>Ohlone Community College</h3>
+                    <div class="date-location" style="margin-bottom: 0;">2025 - 2028</div>
+                </div>
+                <div class="date-location">Fremont, CA</div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div>
+                <div class="flex-row-between">
+                    <h3>UC Scouts</h3>
+                    <div class="date-location" style="margin-bottom: 0;">2024 - 2028</div>
+                </div>
+                <div class="date-location">Santa Clara, CA</div>
+            </div>
+
+            <div class="section-divider"></div>
+            
+            <div>
+                <h3>Relevant Coursework</h3>
+                <p>Engineering Graphics & Design, Digital Electronics, AP Chemistry, Algebra 1 & 2, Trigonometry, Geometry, AP Macro, Spanish 2.</p>
+                
+                <p style="margin-top: 12px; font-weight: 500;">
+                    <strong>Overall GPA:</strong> 3.53/4.0
+                </p>
+            </div>
+
+        </div>
+               
+        <div class="card">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Internet of Things (Stanford University)</li>
+                <li>Iterative Innovation Process (MIT)</li>
+                <li>Introduction to Robotics (UC Scouts)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Experience</h2>
+
+            <div>
+                <div class="flex-row-between">
+                    <h3>Robotics Team Captain , Core builder & Designer</h3>
+                    <div class="date-location" style="margin-bottom: 0;">2021 - Present</div>
+                </div>
+                <div class="subtitle">FIRST Tech Challenge (FTC) - Galaxy Bots #21454</div>
+                <ul>
+                    <li>Lead the robot design, building, and competition strategy using iterative design processes.</li>
+                    <li>Applied CAD skills and mechanical system knowledge to prototype and fabricate robot components.</li>
+                    <li>Participated in the NorCal Regionals twice, secured 5 competitive awards including Innovate, Design, and Inspire.</li>
+                </ul>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div>
+                <div class="flex-row-between">
+                    <h3>Teen Volunteer & Aircraft Builder</h3>
+                    <div class="date-location" style="margin-bottom: 0;">2024 - 2025</div>
+                </div>
+                <div class="subtitle">Experimental Aircraft Association (EAA - Chapter 20)</div>
+                <ul>
+                    <li>Collaborated with aerospace engineers to build light sport aircraft and learned aircraft design principles.</li>
+                    <li>Led technical activities including deburring and riveting aluminum metal sections for aircraft assembly.</li>
+               </ul>
+            </div>
+            
+            <div class="section-divider"></div>
+
+            <h4>Passion Projects</h4>
+            <div>
+                <div class="flex-row-between">
+                    <h3>Polar Robot Arm</h3>
+                    <div class="date-location" style="margin-bottom: 0;">2026</div>
+                </div>
+                <p>Currently researching to build Polar robotic arm for multipurpose use.</p>
+            </div>
+            <br>
+
+            <div>
+                <div class="flex-row-between">
+                    <h3>Augmented Reality (AR) Glasses Project</h3>
+                    <div class="date-location" style="margin-bottom: 0;">2025</div>
+                </div>
+                <p>Researched, designed, and constructed a prototype for personal AR glasses, integrating optical and electronic components.</p>
+            </div>
+            <br>
+
+            <div>
+                <div class="flex-row-between">
+                    <h3>Personal Electric Go-Kart Build</h3>
+                    <div class="date-location" style="margin-bottom: 0;">2024</div>
+                </div>
+                <p>Designed and built a functional electric go-kart from the ground up, managing all aspects of the mechanical and structural assembly.</p>
+            </div>
+            <br>
+            
+            <div>
+                <div class="flex-row-between">
+                    <h3>High-Performance Custom PC Build</h3>
+                    <div class="date-location" style="margin-bottom: 0;">2023</div>
+                </div>
+                <p>Sourced all components and successfully built a high-performance personal computer, developing a deep understanding of PC hardware architecture.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
