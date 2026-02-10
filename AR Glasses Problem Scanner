@@ -1,0 +1,55 @@
+import cv2
+import pytesseract
+import platform
+
+# 1. SETUP TESSERACT PATH (Windows users only)
+# If Tesseract is in your PATH, you can comment this out.
+if platform.system() == "Windows":
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+class ARScanner:
+    def __init__(self, camera_index=1):
+        # Index 0 is usually integrated webcam, 1 is the OV2311 USB camera
+        self.cap = cv2.VideoCapture(camera_index)
+        
+        # 2. CONFIGURE OV2311 NATIVE SETTINGS
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1600)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1200)
+        self.cap.set(cv2.CAP_PROP_FPS, 60)
+        
+        if not self.cap.isOpened():
+            print("Error: Could not find OV2311 Camera.")
+            exit()
+
+    def scan_loop(self):
+        print("AR Scanner Active. Press 'q' to quit.")
+        
+        while True:
+            ret, frame = self.cap.read()
+            if not ret:
+                break
+
+            # 3. PRE-PROCESSING FOR OCR
+            # OV2311 is monochrome, so we don't need color conversion.
+            # We apply a slight threshold to make text pop for the AI.
+            _, thresh = cv2.threshold(frame, 100, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+            # 4. PERFORM OCR
+            # --psm 3: Automatic page segmentation (best for general signs/pages)
+            text = pytesseract.image_to_string(thresh, config='--psm 3')
+
+            if text.strip():
+                print(f"Scanned Text: {text.strip()}")
+
+            # 5. DISPLAY FEED (For debugging on PC)
+            cv2.imshow("OV2311 Feed (Pre-processed)", thresh)
+
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+
+        self.cap.release()
+        cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    scanner = ARScanner(camera_index=1)
+    scanner.scan_loop()
